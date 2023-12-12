@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Text extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'content',
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => TextCreated::class,
+    ];
 }
